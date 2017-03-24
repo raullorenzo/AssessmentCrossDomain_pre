@@ -1,0 +1,32 @@
+<h3 style="margin: 5%;">Habitants of Brastlewark</h3>
+<div style="margin: 4%;" class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <i style="margin-right-right: 5px;" class="glyphicon glyphicon-search"></i>
+      </span>
+      <input id="login-username" type="text" class="form-control" placeholder="Search for name or friends..." ng-model="query">
+    </div>
+  </div><!-- /.col-lg-6 -->
+</div>
+<div style="margin: 5%;" class="row">
+  <div class="col-xs-6 col-sm-4" dir-paginate="man in mans | filter:query | itemsPerPage: 6"  pagination-id="branch">
+  	<div class="card" style="width: 20rem;">
+	  <img class="card-img-top" src="{{man.thumbnail}}" alt="Card image cap">
+	  <div class="card-block">
+	    <h4 class="card-title" ng-bind="man.name"></h4>
+	    <!-- <strong>Age:</strong><p class="card-text" ng-bind="man.age"></p>
+        <strong>Weight:</strong><p class="card-text" ng-bind="man.weight"></p>
+        <strong>Height:</strong><p class="card-text" ng-bind="man.height"></p>
+        <strong>Hair Color:</strong><p class="card-text" ng-bind="man.hair_color"></p>
+        <strong>Professions:</strong><p class="card-text" ng-repeat="profession in man.professions">{{$index+1}} - {{profession}}</p>
+        <strong>Friends:</strong><p class="card-text" ng-repeat="friend in man.friends">{{$index+1}} - {{friend}}</p> -->
+	    <button class="btn btn-primary" ng-click="modal(man)">More info</button>
+	  </div>
+	</div>
+	<br>
+  </div>
+  <div class="col-xs-12 col-md-8">
+  	<dir-pagination-controls pagination-id="branch"></dir-pagination-controls>
+  </div>
+</div>
